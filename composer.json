@@ -1,0 +1,10 @@
+{
+  "name": "jekyllpay/jekyllpay-php",
+  "description": "Used pay to Union Pay for developer",
+  "minimum-stability": "alpha",
+  "license": "Open Source",
+  "require": {
+      "guzzlehttp/guzzle": "^6.3",
+      "katzgrau/klogger": "^1.2"
+  }
+}
