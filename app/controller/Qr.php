@@ -14,11 +14,13 @@ class Qr extends Base_controller
 {
     public function pay()
     {
-        $this->config = $this->config('cert');
+        $this->config = $this->config('unionpay');
 
-        $pay = new Unionpay($this->config ?? []);
+        $pay = new Unionpay($this->config['cert'] ?? []);
 
-        $url = '';
-        $pay->exec($url, $data);
+        $data = [];
+        $result = $pay->exec($this->config['urls']['qr'], $data);
+
+        var_dump($result);die;
     }
 }

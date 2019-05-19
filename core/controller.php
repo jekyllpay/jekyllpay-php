@@ -31,7 +31,18 @@ abstract class Base_controller
             return$jekyllpay_config;
         }
         elseif ($value === NULL) {
-            return $jekyllpay_config[$name] ?? NUll;
+            $arr = explode('.', $name);
+            $count = count($arr);
+            if ($count == 1) {
+                return $jekyllpay_config[ $arr[0] ] ?? NULL;
+            }
+            elseif ($count == 2) {
+                return $jekyllpay_config[ $arr[0] ][ $arr[1] ] ?? NULL;
+            }
+            elseif ($count == 3) {
+                return $jekyllpay_config[ $arr[0] ][ $arr[1] ][ $arr[2] ] ?? NULL;
+            }
+            return $jekyllpay_config[ $arr[0] ][ $arr[1] ][ $arr[2] ][ $arr[3] ] ?? NULL;
         }
 
         $jekyllpay_config[$name] = $value;

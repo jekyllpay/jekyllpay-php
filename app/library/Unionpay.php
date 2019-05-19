@@ -21,8 +21,6 @@ class Unionpay
 
     public function exec($url, $data)
     {
-        die('qqq');
-
         $client = new Client(['timeout'=>3,]);
         $res = $client->post($url . $this->config['utoken'], ['json' => $this->build_query($data)]);
         return $res->getBody()->getContents();

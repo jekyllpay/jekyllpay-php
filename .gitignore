@@ -1,4 +1,6 @@
 .idea/
 runtime/cache/
 runtime/log/
+app/config/config.php
+app/config/cert
 vendor/
